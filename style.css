@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+    margin: 0;
+  }
+  
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(images/background.jpg);
+    background-color: #2222;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .color-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+    z-index: -1;
+  }
+  
+  .title,
+  .countertitle,
+  .glass,
+  .timer,
+  .sub_timer {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .countertitle {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .glass {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .whishes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .whishes li {
+    text-align: center;
+    margin-bottom: 15px;
+    color: lightgrey;
+  }
+  
+  a {
+    text-decoration: none;
+    color: lightgrey;
+  }
+  
+  .timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sub_timer {
+    width: 220px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .digit {
+    color: white;
+    font-weight: lighter;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+  
+  .digit_name {
+    color: #000000;
+    background: #fff;
+    text-align: center;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+  }
+  
+  /* Responsive styles */
+  
+  @media screen and (max-width: 1200px) {
+    .glass {
+      width: 80%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .countertitle {
+      font-size: 1.8rem;
+    }
+  
+    .glass {
+      border-radius: 10px;
+    }
+  
+    .timer {
+      margin-top: 10px;
+    }
+  
+    .digit {
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+  }  
