@@ -26,14 +26,30 @@ setInterval(timer, 1000);
 // Modal handling for product images
 var modal = document.getElementById("myModal");
 var modalImg = document.getElementById("img01");
-var imgs = document.querySelectorAll(".product-img img");
+var imgs = document.querySelectorAll(".product-img img:first-child");
+var allImgs = document.querySelectorAll(".product-img img");
 var span = document.getElementsByClassName("close")[0];
+var prevBtn = document.getElementById("prev");
+var nextBtn = document.getElementById("next");
+
+var currentImgIndex = 0;
+var currentProductImgs = [];
+
+// Function to update the modal image
+function updateModalImage() {
+    if (currentProductImgs.length > 0 && currentImgIndex >= 0 && currentImgIndex < currentProductImgs.length) {
+        modalImg.src = currentProductImgs[currentImgIndex].src;
+    }
+}
 
 // Loop through each image and add click event
 imgs.forEach(function (img) {
     img.onclick = function () {
+        var productId = this.getAttribute("data-product");
+        currentProductImgs = document.querySelectorAll('.product-img img[data-product="' + productId + '"]');
+        currentImgIndex = Array.prototype.indexOf.call(currentProductImgs, this);
         modal.style.display = "block";
-        modalImg.src = this.src;
+        updateModalImage();
     }
 });
 
@@ -47,4 +63,16 @@ window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+// Show previous image
+prevBtn.onclick = function () {
+    currentImgIndex = (currentImgIndex - 1 + currentProductImgs.length) % currentProductImgs.length;
+    updateModalImage();
+}
+
+// Show next image
+nextBtn.onclick = function () {
+    currentImgIndex = (currentImgIndex + 1) % currentProductImgs.length;
+    updateModalImage();
 }

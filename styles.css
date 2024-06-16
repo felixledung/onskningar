@@ -150,6 +150,8 @@ td img {
     height: 36px;
     margin-right: .5rem;
     vertical-align: middle;
+    border-radius: 6px;
+    /* Added border-radius to all images inside table cells */
 }
 
 table,
@@ -269,6 +271,7 @@ tbody tr:hover {
 }
 
 /* Modal styling */
+/* Modal styling */
 .modal {
     display: none;
     /* Hide the modal by default */
@@ -289,6 +292,8 @@ tbody tr:hover {
     display: block;
     width: 80%;
     max-width: 700px;
+    border-radius: 6px; /* Lägger till border-radius på modal-content */
+    overflow: hidden; /* Hindrar innehållet från att sticka ut ur ramen */
 }
 
 /* Close button for the modal */
@@ -317,28 +322,73 @@ tbody tr:hover {
     margin: auto;
     max-height: 80vh;
     /* Limit the height of the image to prevent it from occupying the entire screen */
+    border-radius: 6px; /* Lägger till border-radius på bilder i modalen */
 }
 
+/* Modal navigation styling */
+.modal-navigation {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centrerar knapparna horisontellt */
+}
+
+.modal-navigation button {
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-navigation button:hover {
+    background: linear-gradient(to right, #45a049, #0a5ba0);
+}
+
+.modal-navigation button:focus {
+    outline: none;
+}
+
+.modal-navigation button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.modal-navigation button:disabled:hover {
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+}
+
+/* Media queries */
+
 /* Small devices (phones, 576px and up) */
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
+
     /* Example of changes for small devices */
     .header {
         padding: 10px 15px;
     }
+
     .header h1 {
         font-size: 20px;
     }
+
     .navbar ul li {
         margin: 0 10px;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+
     /* Example of changes for medium devices */
     .header {
         padding: 10px 20px;
     }
+
     .header h1 {
         font-size: 24px;
     }
@@ -346,10 +396,12 @@ tbody tr:hover {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
     /* Example of changes for large devices */
     .header {
         padding: 10px 30px;
     }
+
     .header h1 {
         font-size: 28px;
     }
@@ -357,12 +409,14 @@ tbody tr:hover {
 
 @media (max-width: 992px) {
     .table {
-        width: 95vw; /* Increase width for better fit on smaller screens */
+        width: 95vw;
+        /* Increase width for better fit on smaller screens */
     }
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: 15px; /* Decrease padding on smaller screens */
+        padding: 15px;
+        /* Decrease padding on smaller screens */
     }
 }

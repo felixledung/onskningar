@@ -34,16 +34,26 @@
                             <td>Thule Chasm 26L</td>
                             <td>
                                 <div class="product-img">
-                                    <img src="images/products/thule_chasm.png" alt="Thule Chasm 26L">
-                                </div>
+                                    <img src="images/products/thule_chasm.png" alt="Thule Chasm 26L" data-product="1">
+                                    <!-- Hidden images -->
+                                    <img src="images/products/thule_chasm_back.png" alt="Thule Chasm 26L Open"
+                                        data-product="1" style="display: none;">
+                                        <img src="images/products/thule_chasm_open.png" alt="Thule Chasm 26L Side"
+                                        data-product="1" style="display: none;">
+                                        <img src="images/products/thule_chasm_person.png" alt="Thule Chasm 26L Side"
+                                        data-product="1" style="display: none;">
+                                        <img src="images/products/thule_chasm_city.png" alt="Thule Chasm 26L Side"
+                                        data-product="1" style="display: none;">
+                                        <img src="images/products/thule_chasm_all_of_sort.png" alt="Thule Chasm 26L Side"
+                                        data-product="1" style="display: none;">
+                                    </div>
                             </td>
                             <td>Ryggsäck</td>
                             <td><a
                                     href="https://www.thule.com/sv-se/backpacks/laptop-backpacks/thule-chasm-backpack-26l-_-3204981">https://www.thule.com/sv-se/backpacks/laptop-backpacks/thule-chasm-backpack-26l-_-3204981</a>
                             </td>
                             <td>Önskar specifikt färgen <span class="underlined-text">svart</span> då den passar mer in
-                                i
-                                samhälle, samt är diskret på samma sätt.</td>
+                                i samhälle, samt är diskret på samma sätt.</td>
                             <td><strong>1 399 SEK</strong></td>
                         </tr>
                     </tbody>
@@ -84,6 +94,10 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
+        <div class="modal-navigation">
+            <button id="prev">&lt; Föregående</button>
+            <button id="next">Nästa &gt;</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
