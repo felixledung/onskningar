@@ -1,0 +1,368 @@
+/* Allmänna stilar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+.home {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #2a2c30;
+    /* New background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #31363d;
+    padding: 10px 20px;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #bbb;
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    /* Fill remaining space */
+}
+
+.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.table_header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    text-align: center;
+}
+
+.table_body {
+    width: 95%;
+    max-height: calc(89% - .8rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+.table_body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table_body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table_body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+.table_body td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.table_body td a:hover {
+    text-decoration: underline;
+}
+
+.table_body td a:visited {
+    color: #6610f2;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff4;
+    font-weight: 700;
+    text-align: start;
+    cursor: pointer;
+}
+
+tbody:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
+}
+
+.underlined-text {
+    font-weight: bold;
+}
+
+/* Countdown */
+.count-wrapper {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    /* Added margin bottom for spacing */
+}
+
+/* Heading styles */
+.heading {
+    color: #31363d;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description styles */
+.description {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Timer container styles */
+.timer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    /* Common background for all sub_timers */
+    border-radius: 8px;
+    padding: 10px;
+    /* Added padding for space inside the timer */
+}
+
+/* Individual timer block styles */
+.sub_timer {
+    flex: 1;
+    /* Distribute equal space among sub_timers */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_timer h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #31363d;
+}
+
+.sub_timer .digit_name {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #31363d;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    flex-shrink: 0;
+    /* Prevent footer from shrinking */
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    /* Hide the modal by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black background with opacity */
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Close button for the modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Enlarged image inside the modal */
+.modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    max-height: 80vh;
+    /* Limit the height of the image to prevent it from occupying the entire screen */
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) { 
+    /* Example of changes for small devices */
+    .header {
+        padding: 10px 15px;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .navbar ul li {
+        margin: 0 10px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    /* Example of changes for medium devices */
+    .header {
+        padding: 10px 20px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Example of changes for large devices */
+    .header {
+        padding: 10px 30px;
+    }
+    .header h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .table {
+        width: 95vw; /* Increase width for better fit on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Decrease padding on smaller screens */
+    }
+}

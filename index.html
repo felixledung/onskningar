@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/FelixLedung.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <title>Önskningar | Felix Ledung</title>
+</head>
+
+<body class="home">
+    <div class="main-content">
+        <main class="table">
+            <section class="table_header">
+                <h1>Önskningar</h1>
+            </section>
+            <section class="table_body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Namn</th>
+                            <th>Bild</th>
+                            <th>Typ</th>
+                            <th>URL</th>
+                            <th>Beskrivning</th>
+                            <th>Pris</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Thule Chasm 26L</td>
+                            <td>
+                                <div class="product-img">
+                                    <img src="images/products/thule_chasm.png" alt="Thule Chasm 26L">
+                                </div>
+                            </td>
+                            <td>Ryggsäck</td>
+                            <td><a
+                                    href="https://www.thule.com/sv-se/backpacks/laptop-backpacks/thule-chasm-backpack-26l-_-3204981">https://www.thule.com/sv-se/backpacks/laptop-backpacks/thule-chasm-backpack-26l-_-3204981</a>
+                            </td>
+                            <td>Önskar specifikt färgen <span class="underlined-text">svart</span> då den passar mer in
+                                i
+                                samhälle, samt är diskret på samma sätt.</td>
+                            <td><strong>1 399 SEK</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div class="count-wrapper">
+        <h1 class="heading">Dagar kvar till födelsedag</h1>
+        <p class="description">Nedräkning tills jag fyller år!</p>
+
+        <div class="timer">
+            <div class="sub_timer" id="dayTimer">
+                <h1 id="day">00</h1>
+                <p class="digit_name">Dagar</p>
+            </div>
+            <div class="sub_timer" id="hourTimer">
+                <h1 id="hours">00</h1>
+                <p class="digit_name">Timmar</p>
+            </div>
+            <div class="sub_timer" id="minTimer">
+                <h1 id="min">00</h1>
+                <p class="digit_name">Minuter</p>
+            </div>
+            <div class="sub_timer" id="secTimer">
+                <h1 id="sec">00</h1>
+                <p class="digit_name">Sekunder</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Felix Ledung. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <!-- Modal for enlarged image -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
