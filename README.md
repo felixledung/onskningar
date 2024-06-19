@@ -1,4 +1,4 @@
-# wishes.felixledung.github.io
+# Önskningar
 Mina önskningar för mina födelsedagar och julaftonar.
 
 # Webbplatsen innehåller följande funktioner:
