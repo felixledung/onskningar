@@ -11,6 +11,11 @@ body {
     height: 100%;
 }
 
+body.dark-theme {
+    background-color: #2a2c30;
+    color: #fff;
+}
+
 .home {
     margin: 0;
     padding: 0;
@@ -44,14 +49,55 @@ body {
     background: #31363d;
     width: 100%;
     display: flex;
-    justify-content: center; /* Horisontell centrerad */
-    align-items: center; /* Vertikalt centrerad */
+    justify-content: center;
+    /* Horisontell centrerad */
+    align-items: center;
+    /* Vertikalt centrerad */
+}
+
+.header_home.dark-theme {
+    background: #31363d;
+    color: #fff;
+}
+
+.header_home.dark-theme img {
+    border-color: #fff;
+}
+
+.table_header.dark-theme,
+.table_body.dark-theme,
+footer.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Light theme */
+body.light-theme {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.header_home.light-theme {
+    background: #fff;
+    color: #000;
+}
+
+.header_home.light-theme img {
+    border-color: #000;
+}
+
+.table_header.light-theme,
+.table_body.light-theme,
+footer.light-theme {
+    background-color: #fff;
+    color: #000;
 }
 
 .header_home img {
     width: 36px;
     border-radius: 6px;
-    margin: 10px; /* Förkortning för marginal */
+    margin: 10px;
+    /* Förkortning för marginal */
     float: left;
 }
 
@@ -64,7 +110,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
-    text-align: center; /* Centrerar texten */
+    text-align: center;
+    /* Centrerar texten */
 }
 
 /* Main Content */
@@ -255,8 +302,10 @@ tbody tr:hover {
 }
 
 .modal-nav {
-    text-align: center; /* Center aligns the content */
-    margin-top: 20px; /* Adjust margin as needed */
+    text-align: center;
+    /* Center aligns the content */
+    margin-top: 20px;
+    /* Adjust margin as needed */
     color: #fff;
     font-weight: bold;
 }
@@ -362,7 +411,8 @@ tbody tr:hover {
 /* Prev and Next buttons */
 #prev,
 #next {
-    padding: 8px 16px; /* Lägg till padding för att öka avståndet mellan knapparna */
+    padding: 8px 16px;
+    /* Lägg till padding för att öka avståndet mellan knapparna */
     display: inline-block;
     color: #f2f2f2;
     outline: none;
@@ -371,22 +421,26 @@ tbody tr:hover {
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    bottom: 20px; /* Justera bottenavståndet som önskat */
+    bottom: 20px;
+    /* Justera bottenavståndet som önskat */
     transition: background-color 0.3s, color 0.3s;
     background: linear-gradient(to right, #66cc79, #1a7fcc);
 }
 
 #prev {
-    left: 20px; /* Justera vänster position efter behov */
+    left: 20px;
+    /* Justera vänster position efter behov */
 }
 
 #next {
-    right: 20px; /* Justera höger position efter behov */
+    right: 20px;
+    /* Justera höger position efter behov */
 }
 
 #prev:hover,
 #next:hover {
-    background: linear-gradient(to right, #45a049, #0a5ba0); /* Hover bakgrundsfärg */
+    background: linear-gradient(to right, #45a049, #0a5ba0);
+    /* Hover bakgrundsfärg */
 }
 
 .underlined-text {
@@ -409,9 +463,11 @@ tbody tr:hover {
     gap: 20px;
     position: fixed;
     bottom: 50px;
-    right: -400px; /* Initially hidden */
+    right: -400px;
+    /* Initially hidden */
     max-width: 345px;
-    width: 100%; /* Full width on smaller screens */
+    width: 100%;
+    /* Full width on smaller screens */
     background: #fff;
     border-radius: 8px;
     padding: 15px 25px 22px;
@@ -474,13 +530,16 @@ header h2 {
 .buttons .button {
     border: none;
     color: #fff;
-    padding: 10px 0; /* Increased padding for better touch area */
+    padding: 10px 0;
+    /* Increased padding for better touch area */
     border-radius: 4px;
     background: #4070f4;
     cursor: pointer;
-    width: calc(50% - 5px); /* Adjusted width for responsive layout */
+    width: calc(50% - 5px);
+    /* Adjusted width for responsive layout */
     transition: all 0.2s ease;
-    text-align: center; /* Centered text within buttons */
+    text-align: center;
+    /* Centered text within buttons */
 }
 
 .buttons .button:hover {
@@ -558,16 +617,21 @@ header h2 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 80%; /* Limit height to keep content visible */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: 80%;
+    /* Limit height to keep content visible */
 }
 
 .popup-text {
     background: #ccc;
     border-radius: 6px;
-    max-height: 300px; /* Maximal höjd för popup-texten */
-    overflow-y: auto; /* Aktivera vertikal scrollbar vid behov */
-    padding: 10px; /* Padding för att ge utrymme inuti popup-box */
+    max-height: 300px;
+    /* Maximal höjd för popup-texten */
+    overflow-y: auto;
+    /* Aktivera vertikal scrollbar vid behov */
+    padding: 10px;
+    /* Padding för att ge utrymme inuti popup-box */
 }
 
 /* Style for the title in the popup */
@@ -590,6 +654,25 @@ header h2 {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+/* Toggle theme button */
+
+#theme-toggle {
+    padding: 15px;
+    background: #3b414a;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 76px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 /* Responsive design */
@@ -715,22 +798,43 @@ header h2 {
 
 @media only screen and (max-width: 768px) {
     .cookies {
-        max-width: 90%; /* Adjusted width for smaller screens */
-        padding: 15px 20px 20px; /* Adjusted padding */
+        max-width: 90%;
+        /* Adjusted width for smaller screens */
+        padding: 15px 20px 20px;
+        /* Adjusted padding */
     }
 }
 
 @media only screen and (max-width: 600px) {
     .cookies {
-        max-width: 100%; /* Full width on smaller screens */
-        padding: 15px 20px 20px; /* Adjusted padding */
+        max-width: 100%;
+        /* Full width on smaller screens */
+        padding: 15px 20px 20px;
+        /* Adjusted padding */
     }
 }
 
 @media only screen and (max-width: 600px) {
     .buttons .button {
-        padding: 8px 0; /* Adjusted padding for smaller screens */
-        width: 100%; /* Full width buttons on smaller screens */
-        margin-top: 10px; /* Increased margin between buttons */
+        padding: 8px 0;
+        /* Adjusted padding for smaller screens */
+        width: 100%;
+        /* Full width buttons on smaller screens */
+        margin-top: 10px;
+        /* Increased margin between buttons */
+    }
+}
+
+@media (max-width: 768px) {
+    #theme-toggle {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #theme-toggle {
+        padding: 8px;
+        font-size: 12px;
     }
 }
