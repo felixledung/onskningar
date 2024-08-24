@@ -29,3 +29,11 @@ Modala fönster:
 
 Bildvisningsmodal: Visar produktbilder i ett modalt fönster med navigationsknappar för att bläddra mellan bilder.
 Läs mer-modal: Visar mer detaljerad information om en produkt när användaren klickar på "Läsa mer"-knappen.
+
+--- WEB DEVELOPMENT ---
+
+Hemsidan är skapad i HTML, CSS och JAVASCRIPT.
+
+Kopiering av hemsidan eller hemsidans kod är ej tillåtet utan tillstånd från developern.
+
+© 2024 Felix Ledung. Alla rättigheter förbehållna.
