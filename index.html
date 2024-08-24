@@ -5,22 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/FelixLedung.jpg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz, wght, FILL, GRAD@48,400,0,0 " />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
     <title>Önskningar | Felix Ledung</title>
 </head>
 
 <body class="home">
+
     <header class="header_home">
         <h1><img src="images/FelixLedung.jpg" alt=""> Felix Ledung</h1>
         <button id="theme-toggle" class="theme-toggle">Byt Tema</button>
+
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="#">Hem</a>
+                    <a href="#">Om mig</a>
+                    <a href="#">Mina önskningar</a>
+                    <a href="#">Kontakta mig</a>
+                    <a href="product-viewer.html"><i class="fa-solid fa-heart"></i></a>
+                </li>
+            </ul>
+        </nav>
     </header>
+
+    <div class="new_feature release_card">
+        <h1>Ny Funktion:</h1>
+        <h5>Vi har släppt vår nya funktion, produktvisare.</h5>
+        <p>Denna tilläggsfunktion hjälper dig att se mer om mina önskningar. <br>Funktioner som ingår: </p>
+        <ul>
+            <li>Shopping Cart</li>
+            <li>Product Viewing</li>
+            <li>Specifikationer</li>
+            <li>Wishlist</li>
+            <li>Företagsbeskrivning</li>
+            <li>Skapa</li>
+        </ul>
+        <button id="release_btn" class="release_btn">Jag förstår</button>
+    </div>
 
     <div class="main-content">
         <main class="table">
             <section class="table_header">
                 <h1>Önskningar</h1>
             </section>
+
+            <section class="auto-search">
+                <h1>Sök efter en önskan</h1>
+
+                <div class="search-box">
+                    <div class="search-row">
+                        <input type="text" class="input-box" placeholder="Search for a desire..." autocomplete="off">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="result-box"></div>
+                </div>
+
+                <hr>
+            </section>
+
             <section class="table_body">
                 <table>
                     <thead>
@@ -139,26 +185,11 @@
         </div>
     </div>
 
-    <div class="cookies">
-        <header>
-            <i class="bx bx-cookie"></i>
-            <h2>Cookies Consent</h2>
-        </header>
-
-        <div class="data">
-            <p>This website use cookies to help you have a superior and more relevant browsing experience on the
-                website. <a href="">Read more...</a></p>
-        </div>
-
-        <div class="buttons">
-            <button class="button" id="acceptBtn">Accept</button>
-            <button class="button">Decline</button>
-        </div>
-    </div>
-
     <footer class="footer">
-        <p>&copy; 2024 Felix Ledung. Alla rättigheter förbehållna.</p>
+        <p>&copy; 2024 Felix Ledung. Alla rättighigheter förbehållna.</p>
+        <i class='bx bxs-cog'></i>
     </footer>
+
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -191,11 +222,21 @@
     </div>
 
     <!-- Scripts -->
-     <script src="theme.js"></script>
-    <script src="readmore.js"></script>
-    <script src="cookies.js" defer></script>
-    <script src="countdown.js"></script>
-    <script src="modal.js"></script>
+    <script src="javascript/countdown.js"></script>
+    <script src="javascript/modal.js"></script>
+    <script src="javascript/readmore.js" defer></script>
+    <script src="javascript/settings.js"></script>
+    <script src="javascript/theme.js"></script>
+    <script src="javascript/copylink.js"></script>
+    <script src="javascript/sharemodal.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/chatbot.js" defer></script>
+    <script src="javascript/autocomplete.js" defer></script>
+    <script src="javascript/extract-data.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="javascript/description.js"></script>
+    <script src="javascript/release-card.js"></script>
 </body>
 
 </html>

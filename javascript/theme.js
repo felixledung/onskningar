@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.remove('dark-theme', 'light-theme');
         if (theme === 'dark') {
             body.classList.add('dark-theme');
-            themeToggleBtn.textContent = 'Toggle Theme: Dark';
+            themeToggleBtn.innerHTML = '<i class="bx bxs-moon"></i> Toggle Theme: Dark';
         } else if (theme === 'light') {
             body.classList.add('light-theme');
-            themeToggleBtn.textContent = 'Toggle Theme: Light';
+            themeToggleBtn.innerHTML = '<i class="bx bxs-sun"></i> Toggle Theme: Light';
         } else {
-            themeToggleBtn.textContent = 'Toggle Theme: System Default';
+            applySystemTheme();
+            return;
         }
         localStorage.setItem('theme', theme);
     }
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to apply system theme if no user preference is set
     function applySystemTheme() {
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (!darkThemeMq.matches) {
+        if (darkThemeMq.matches) {
             setTheme('dark');
         } else {
             setTheme('light');
