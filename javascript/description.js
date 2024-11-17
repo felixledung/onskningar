@@ -5,6 +5,6 @@ function toggleDescription(button) {
         button.textContent = "Läs mindre";
     } else {
         descriptionDiv.style.display = "none";
-        button.textContent = "Läsa mer";
+        button.textContent = "Läs mer";
     }
 }

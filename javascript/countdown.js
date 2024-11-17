@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = function () {
     const countdowns = [
         {
             date: getNextYearDate("06-29"),
@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    let currentCountdownIndex = 0;
-
     function getNextYearDate(mmdd) {
         const now = new Date();
         let nextDate = new Date(`${now.getFullYear()}-${mmdd}`);
@@ -26,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCountdown() {
-        const countdown = countdowns[currentCountdownIndex];
+        // Sortera countdowns baserat på när de kommer (från nuvarande tidpunkt)
+        countdowns.sort((a, b) => a.date - b.date);
+
+        // Välj den närmaste countdownen
+        const countdown = countdowns[0];
         const now = Date.now();
         const remainingTime = countdown.date - now;
 
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
+        // Uppdatera DOM med den närmaste countdownen
         document.getElementById("day").textContent = days;
         document.getElementById("hours").textContent = formatTime(hours);
         document.getElementById("min").textContent = formatTime(minutes);
@@ -44,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("description").textContent = countdown.description;
 
         if (remainingTime <= 0) {
-            currentCountdownIndex = (currentCountdownIndex + 1) % countdowns.length;
-            countdowns[currentCountdownIndex].date = getNextYearDate(getFormattedDate(countdowns[currentCountdownIndex].date));
+            countdowns[0].date = getNextYearDate(getFormattedDate(countdowns[0].date));
         }
 
         setTimeout(updateCountdown, 1000);
@@ -63,4 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCountdown();
-});
+};

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page not found | 404</title>
+    <script src="javascript/icon_libraries.js"></script>
     <link rel="icon" href="images/FelixLedung.jpg">
     <link rel="stylesheet" href="404.css">
 </head>
@@ -14,13 +15,27 @@
         <div class="content">
             <h1 data-text="404">404</h1>
             <h4>Opps! Page not found</h4>
-            <p>Sorry, the page you're looking for doesn't exist. If you think something is brojeb, report a problem.</p>
+            <p>Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.</p>
             <div class="btns">
                 <a href="index.html">Return home</a>
                 <a href="#">Report problem</a>
             </div>
         </div>
     </div>
+
+    <div class="report-problem">
+        <div class="x-mark">
+            &times;
+        </div>
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h1>Report a problem</h1>
+        <input type="text" placeholder="Name the problem" required>
+        <textarea name="problem-msg" id="problem-msg" placeholder="Describe the problem..."></textarea>
+        <input type="submit" value="Send the message to us">
+    <p class="info" id="info">The message you send to us will be anonymously. You got an confirmation email, and we'll get back to you as soon as possible</p>
+    </div>
+
+    <script src="javascript/display_reportproblem.js"></script>
 </body>
 
 </html>

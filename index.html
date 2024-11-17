@@ -1,242 +1,36 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/FelixLedung.jpg">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined:opsz, wght, FILL, GRAD@48,400,0,0 " />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles.css">
-    <title>Önskningar | Felix Ledung</title>
+    <title>Wait until the new release of the website</title>
+    <link rel="stylesheet" href="new-release.css">
 </head>
 
-<body class="home">
+<body>
 
-    <header class="header_home">
-        <h1><img src="images/FelixLedung.jpg" alt=""> Felix Ledung</h1>
-        <button id="theme-toggle" class="theme-toggle">Byt Tema</button>
+    <div class="loader"></div>
 
-        <nav class="navbar">
-            <ul>
-                <li>
-                    <a href="#">Hem</a>
-                    <a href="#">Om mig</a>
-                    <a href="#">Mina önskningar</a>
-                    <a href="#">Kontakta mig</a>
-                    <a href="product-viewer.html"><i class="fa-solid fa-heart"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="new_feature release_card">
-        <h1>Ny Funktion:</h1>
-        <h5>Vi har släppt vår nya funktion, produktvisare.</h5>
-        <p>Denna tilläggsfunktion hjälper dig att se mer om mina önskningar. <br>Funktioner som ingår: </p>
-        <ul>
-            <li>Shopping Cart</li>
-            <li>Product Viewing</li>
-            <li>Specifikationer</li>
-            <li>Wishlist</li>
-            <li>Företagsbeskrivning</li>
-            <li>Skapa</li>
-        </ul>
-        <button id="release_btn" class="release_btn">Jag förstår</button>
-    </div>
-
-    <div class="main-content">
-        <main class="table">
-            <section class="table_header">
-                <h1>Önskningar</h1>
-            </section>
-
-            <section class="auto-search">
-                <h1>Sök efter en önskan</h1>
-
-                <div class="search-box">
-                    <div class="search-row">
-                        <input type="text" class="input-box" placeholder="Search for a desire..." autocomplete="off">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                    <div class="result-box"></div>
-                </div>
-
-                <hr>
-            </section>
-
-            <section class="table_body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Namn</th>
-                            <th scope="col">Bild</th>
-                            <th scope="col">Typ</th>
-                            <th scope="col">URL</th>
-                            <th scope="col">Beskrivning</th>
-                            <th scope="col">Säljes av</th>
-                            <th scope="col">Pris</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1</strong></td>
-                            <td headers="title">UA Hustle 5.0 Backpack</td>
-                            <td>
-                                <div class="product-img" aria-hidden="true" data-title="UA Hustle 5.0 Backpack">
-                                    <img src="images/products/UA Hustle 5.0 Backpack.png" alt="UA Hustle 5.0 Backpack"
-                                        data-product="1">
-
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_back.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_2.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_3.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_shoes.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_person.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_water_zoom_1.png" alt=""
-                                        data-product="1" style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_water_2.png" alt=""
-                                        data-product="1" style="display: none;">
-                                </div>
-                            </td>
-                            <td>Ryggsäck</td>
-                            <td><a
-                                    href="https://www.underarmour.eu/en-se/p/backpacks/ua_hustle_5.0_backpack/1361176.html?dwvar_1361176_color=289&start=0&breadCrumbLast=Backpacks#index-2">UA
-                                    Hustle 5.0 Backpack</a></td>
-                            <td>
-                                <div class="description">
-                                    <p>
-                                        Eftersom jag börjar gymnasiet till hösten så önskar jag denna ryggsäck. Denna
-                                        ryggsäck är lagom stor för vad jag behöver. En uppgradering från de väskor jag
-                                        har. Jag får plats med en dator, laddare,
-                                        gympaskor och gympakläder. Den är även vattentätt.</p>
-                                </div>
-                                <button class="show-more-btn" onclick="toggleDescription(this)">Läsa mer</button>
-                            </td>
-                            <td>Underarmour</td>
-                            <td><strong>573 SEK</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>2</strong></td>
-                            <td headers="title">Dubbelt bildskärmsstativ för vertikal stapling – svängbart,
-                                höjdjusterbart och rymmer två 13–34 tums skärmar</td>
-                            <td>
-                                <div class="product-img" aria-hidden="true"
-                                    data-title="Deltaco Dual-monitor Skrivbordsfäste">
-                                    <img src="images/products/skärmfäste.png" alt="Deltaco Dual-monitor Skrivbordsfäste"
-                                        data-product="2">
-                                    <img src="images/products/skärmfäste_gaming.jpg" alt="" data-product="2"
-                                        style="display: none;">
-                                </div>
-                            </td>
-                            <td>Skärmstativ 13-34 tums</td>
-                            <td><a
-                                    href="https://www.amazon.se/bildsk%C3%A4rmsstativ-frist%C3%A5ende-bildsk%C3%A4rmsh%C3%B6jare-h%C3%B6jdjusterbar-HT05B-002P/dp/B0828R6K22/ref=asc_df_B0828R6K22/?tag=shpngadsglede-21&linkCode=df0&hvadid=476486195230&hvpos=&hvnetw=g&hvrand=1725572024109486320&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062429&hvtargid=pla-885942556558&mcid=d34e016aa51c3fcdbc40456d50a209cf&th=1">Dubbelt
-                                    bildskärmsstativ för vertikal stapling – svängbart, höjdjusterbart och rymmer två
-                                    13–34 tums skärmar</a></td>
-                            <td>
-                                <div class="description">
-                                    Eftersom jag nyligen fått en ny skärm (32") och den gamla står oanvänd, skulle
-                                    jag vilja ha detta stativ för att kunna använda båda skärmarna (24" och 32"). Det är
-                                    viktigt att det är just detta typ av stativ eftersom jag inte har tillräckligt med
-                                    plats för att ha dem bredvid varandra, men att placera dem ovanpå varandra skulle
-                                    fungera :).</div>
-                                <button class="show-more-btn" onclick="toggleDescription(this)">Läs mer</button>
-                            </td>
-                            <td>Hemunduplus. Skickas från Amazon</td>
-                            <td><strong>526 SEK</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
-
-    <div class="count-wrapper">
-        <h1 class="heading" id="heading">Dagar kvar till födelsedag</h1>
-        <p class="description" id="description">Nedräkning tills jag fyller år!</p>
-
-        <div class="timer">
-            <div class="sub_timer">
-                <h1 id="day">00</h1>
-                <p class="digit_name">Dagar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="hours">00</h1>
-                <p class="digit_name">Timmar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="min">00</h1>
-                <p class="digit_name">Minuter</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="sec">00</h1>
-                <p class="digit_name">Sekunder</p>
-            </div>
-        </div>
+    <div class="content">
+        <h1>The website is being updated</h1>
+        <p>Relax, soon you will see my wishes!</p>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024 Felix Ledung. Alla rättighigheter förbehållna.</p>
-        <i class='bx bxs-cog'></i>
+        <p class="version"><b>Version:</b> 241117-9GHT-2MKQ</p>
+        <p class="footer-text">&copy; 2024 Felix Ledung. All rights reserved.</p>
+
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <i class="fa-solid fa-arrow-up" id="moveUp"></i>
     </footer>
 
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <h1 id="productName"></h1>
-            <img id="img01" src="" alt="Modal Image">
-            <p id="modalErrorMessage" class="error-message">We're sorry, we couldn't find the image. Please try
-                searching for the product.</p>
-            <div class="modal-nav">
-                <button id="prev">Föregående bild</button>
-                <button id="next">Nästa bild</button>
-                <p>Du kan även dra på skärmen eller använda piltangenterna för att ändra bild.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Read more modal-->
-
-    <div class="read-more-container">
-        <div class="popup-box">
-            <div class="popup-text">
-                <h1 class="title">Read more about </h1>
-                <p class="description">Unfortunately, we could not find any text, select a product from the table and
-                    press
-                    the button Read more to see the text.</p>
-            </div>
-            <button class="close-btn">Jag är klar</button>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="javascript/countdown.js"></script>
-    <script src="javascript/modal.js"></script>
-    <script src="javascript/readmore.js" defer></script>
-    <script src="javascript/settings.js"></script>
-    <script src="javascript/theme.js"></script>
-    <script src="javascript/copylink.js"></script>
-    <script src="javascript/sharemodal.js"></script>
-    <script src="javascript/script.js"></script>
-    <script src="javascript/chatbot.js" defer></script>
-    <script src="javascript/autocomplete.js" defer></script>
-    <script src="javascript/extract-data.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="javascript/description.js"></script>
-    <script src="javascript/release-card.js"></script>
+    <script src="javascript/icon_libraries.js"></script>
 </body>
 
 </html>
