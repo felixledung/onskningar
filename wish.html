@@ -11,292 +11,114 @@
 </head>
 
 <body class="home">
-
-    <header class="header_home">
-        <h1 class="title">
-            <img src="images/FelixLedung.jpg" alt="Felix Ledung Profile">
-            Felix Ledung
-        </h1>
-
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
+    <header class="header">
+        <h1 class="logo" id="logo">Felix Ledung</h1>
 
         <nav class="navbar">
-            <div class="close-menu">
-                <i class="fas fa-times"></i>
-            </div>
             <ul>
-                <li class="tooltip">
-                    <a href="#">
-                        Hem
-                        <span class="tooltiptext">Gå till startsidan</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="#">
-                        Om mig
-                        <span class="tooltiptext">Läs mer om mig</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="#">
-                        Mina önskningar
-                        <span class="tooltiptext">Se mina önskningar</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="#">
-                        Kontakta mig
-                        <span class="tooltiptext">Kontakta mig</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="product-viewer.html">
-                        <i class="fa-solid fa-heart"></i>
-                        <span class="tooltiptext">Produktvisare</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="#">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span class="tooltiptext">Visa din önskningslista vagn</span>
-                    </a>
-                </li>
-                <li class="tooltip">
-                    <a href="#">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="tooltiptext">Visa de senaste nyheterna</span>
-                    </a>
-                </li>
+                <li><a href="#">Hem</a></li>
+                <li><a href="#">Om mig</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blogg</a></li>
+                <li><a href="#">Kontakt</a></li>
             </ul>
+
+            <div class="icons">
+                <i class="fa-regular fa-newspaper"></i>
+                <div class="mode toggler" id="modeToggler">
+                    <div class="slider-round"></div>
+                </div>
+                <div class="cart-icon">
+                    <a href="shopping-cart.html" id="shopping-cart"><i class="fa-solid fa-shopping-cart"></i></a>
+                    <span class="cart-quantity" style="display: none;">0</span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <section class="auto-search">
-        <div class="search-box">
-            <h1>Sök efter en önskan</h1>
-            <div class="search-row">
-                <!-- Sökfält -->
-                <input type="text" class="input-box" placeholder="Search for a desire..." autocomplete="off">
+    <section class="search">
+        <h1>Sök efter en önskan</h1>
+        <p>Du kan antigen söka efter en produkt genom att ladda upp en bild eller genom att skriva önskans namn...</p>
 
-                <!-- Knapp för att ladda upp bild (kameraikon) -->
-                <button class="tooltip" id="photoButton">
-                    <i class="fa-solid fa-image"></i>
-                    <span class="tooltiptext">Upload an image to use our lens function</span>
-                </button>
+        <div class="search-input">
+            <input type="text" placeholder="Sök efter en önskan">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-                <!-- Sökknapp (för text) -->
-                <button class="tooltip">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <span class="tooltiptext">Search for the wish</span>
-                </button>
+        <div class="result-box">
+            <div class="result">
+                <ul>
+                    <li>
+                        <h3>Produktens namn 1</h3>
+                    </li>
+                    <hr>
+                    <li>
+                        <h3>Produktens namn 2</h3>
+                    </li>
+                    <hr>
+                    <li>
+                        <h3>Produktens namn 3</h3>
+                    </li>
+                </ul>
             </div>
-
-            <!-- Förhandsgranskning av uppladdad bild -->
-            <div class="uploaded-image-preview" style="display: none;">
-                <img id="previewImage" src="" alt="Preview" class="uploaded-image">
-                <button id="removeImage" class="remove-image-btn">&#10006;</button> <!-- "X" mark -->
-            </div>
-
-            <!-- Resultatlista -->
-            <div class="result-box"></div>
         </div>
     </section>
 
-    <!-- Osynlig filinput för att ladda upp en bild -->
-    <input type="file" id="imageUpload" style="display: none;" accept="image/*">
+    <div class="product-container"></div>
 
-    <div class="main-content">
-        <main class="table">
-            <section class="table__header">
-                <h1>Önskningar</h1>
-            </section>
-            <section class="table__body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Namn</th>
-                            <th scope="col">Bild</th>
-                            <th scope="col">Typ</th>
-                            <th scope="col">URL</th>
-                            <th scope="col">Beskrivning</th>
-                            <th scope="col">Säljes av</th>
-                            <th scope="col">Pris</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1</strong></td>
-                            <td headers="title">UA Hustle 5.0 Backpack</td>
-                            <td>
-                                <div class="product-img" aria-hidden="true" data-title="UA Hustle 5.0 Backpack">
-                                    <img src="images/products/UA Hustle 5.0 Backpack.png" alt="UA Hustle 5.0 Backpack"
-                                        data-product="1">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_back.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_2.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_open_3.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_shoes.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_person.png" alt="" data-product="1"
-                                        style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_water_zoom_1.png" alt=""
-                                        data-product="1" style="display: none;">
-                                    <img src="images/products/UA Hustle 5.0 Backpack_water_2.png" alt=""
-                                        data-product="1" style="display: none;">
-                                </div>
-                            </td>
-                            <td>Ryggsäck</td>
-                            <td><a
-                                    href="https://www.underarmour.eu/en-se/p/backpacks/ua_hustle_5.0_backpack/1361176.html?dwvar_1361176_color=289&start=0&breadCrumbLast=Backpacks#index-2">UA
-                                    Hustle 5.0 Backpack</a></td>
-                            <td>
-                                <div class="description">
-                                    <p>
-                                        Eftersom jag börjar gymnasiet till hösten så önskar jag denna ryggsäck. Denna
-                                        ryggsäck är lagom stor för vad jag behöver. En uppgradering från de väskor jag
-                                        har. Jag får plats med en dator, laddare,
-                                        gympaskor och gympakläder. Den är även vattentätt.</p>
-                                </div>
-                                <button class="show-more-btn" onclick="toggleDescription(this)">Läs mer</button>
-                            </td>
-                            <td>Underarmour</td>
-                            <td><strong>573 SEK</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>2</strong></td>
-                            <td headers="title">Dubbelt bildskärmsstativ för vertikal stapling – svängbart,
-                                höjdjusterbart och rymmer två 13–34 tums skärmar</td>
-                            <td>
-                                <div class="product-img" aria-hidden="true"
-                                    data-title="Deltaco Dual-monitor Skrivbordsfäste">
-                                    <img src="images/products/skärmfäste.png" alt="Deltaco Dual-monitor Skrivbordsfäste"
-                                        data-product="2">
-                                    <img src="images/products/skärmfäste_gaming.jpg" alt="" data-product="2"
-                                        style="display: none;">
-                                </div>
-                            </td>
-                            <td>Skärmstativ 13-34 tums</td>
-                            <td><a
-                                    href="https://www.amazon.se/bildsk%C3%A4rmsstativ-frist%C3%A5ende-bildsk%C3%A4rmsh%C3%B6jare-h%C3%B6jdjusterbar-HT05B-002P/dp/B0828R6K22/ref=asc_df_B0828R6K22/?tag=shpngadsglede-21&linkCode=df0&hvadid=476486195230&hvpos=&hvnetw=g&hvrand=1725572024109486320&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062429&hvtargid=pla-885942556558&mcid=d34e016aa51c3fcdbc40456d50a209cf&th=1">Dubbelt
-                                    bildskärmsstativ för vertikal stapling – svängbart, höjdjusterbart och rymmer två
-                                    13–34 tums skärmar</a></td>
-                            <td>
-                                <div class="description">
-                                    Eftersom jag nyligen fått en ny skärm (32") och den gamla står oanvänd, skulle
-                                    jag vilja ha detta stativ för att kunna använda båda skärmarna (24" och 32"). Det är
-                                    viktigt att det är just detta typ av stativ eftersom jag inte har tillräckligt med
-                                    plats för att ha dem bredvid varandra, men att placera dem ovanpå varandra skulle
-                                    fungera :).</div>
-                                <button class="show-more-btn" onclick="toggleDescription(this)">Läs mer</button>
-                            </td>
-                            <td>Hemudu. Skickas från Amazon</td>
-                            <td><strong>526 SEK</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
+    <div class="slidingOverlay"></div>
+    <div class="slidingContainer">
+        <header class="slidingHeader">
+            <h1 class="currentImgTitle">Current image title</h1>
+            <button class="close">&#x2716;</button>
+        </header>
 
-    <div class="count-wrapper">
-        <h1 class="heading" id="birthday_heading">Dagar kvar till födelsedag</h1>
-        <p class="description" id="birthday_description">Nedräkning tills jag fyller år!</p>
-
-        <div class="timer">
-            <div class="sub_timer">
-                <h1 id="birthday_day">00</h1>
-                <p class="digit_name">Dagar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="birthday_hours">00</h1>
-                <p class="digit_name">Timmar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="birthday_min">00</h1>
-                <p class="digit_name">Minuter</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="birthday_sec">00</h1>
-                <p class="digit_name">Sekunder</p>
-            </div>
+        <div class="img-slider">
+            <div class="slides"></div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
-    </div>
 
-    <div class="count-wrapper">
-        <h1 class="heading" id="christmas_heading">Dagar kvar till julafton</h1>
-        <p class="description" id="christmas_description">Nedräkning tills det är julafton</p>
-
-        <div class="timer">
-            <div class="sub_timer">
-                <h1 id="christmas_day">00</h1>
-                <p class="digit_name">Dagar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="christmas_hours">00</h1>
-                <p class="digit_name">Timmar</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="christmas_min">00</h1>
-                <p class="digit_name">Minuter</p>
-            </div>
-            <div class="sub_timer">
-                <h1 id="christmas_sec">00</h1>
-                <p class="digit_name">Sekunder</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <h1 id="productName"></h1>
-            <img id="img01" src="" alt="Modal Image">
-            <p id="modalErrorMessage" class="error-message">We're sorry, we couldn't find the image. Please try
-                searching for the product.</p>
-            <div class="modal-nav">
-                <button id="prev">&#10094;</button>
-                <button id="next">&#10095;</button>
-                <p>Du kan även dra på skärmen eller använda piltangenterna för att ändra bild.</p>
-            </div>
-        </div>
+        <footer class="slidingFooter">
+            <p class="copyright-sliding">Image By: &copy; Under Armour</p>
+            <p class="currentImg">0 / 0</p>
+        </footer>
     </div>
 
     <footer class="footer">
-        <p class="version">Version: 240908-2F36-4NEE</p>
-        <p class="footer-text">&copy; 2024 Felix Ledung. All rights reserved.</p>
+        <p class="version"><b>Version:</b> 240908-2F36-4NEE</p>
+        <p class="footer-text">&copy;
+            <script>new Date().getFullYear</script> Felix Ledung. All rights reserved.
+        </p>
 
         <div class="social-icons">
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
+
+        <img src="images/barcode-_1_.png" width="50" alt="">
     </footer>
 
     <!-- Scripts -->
-    <script src="javascript/countdown.js"></script>
-    <script src="javascript/modal.js"></script>
-    <script src="javascript/readmore.js" defer></script>
-    <script src="javascript/settings.js"></script>
+    <!-- <script src="javascript/countdown.js"></script> -->
+    <!-- <script src="javascript/modal.js"></script> -->
+    <!-- <script src="javascript/readmore.js" defer></script> -->
+    <!-- <script src="javascript/settings.js"></script> -->
     <!-- <script src="javascript/theme.js"></script> -->
-    <script src="javascript/copylink.js"></script>
-    <script src="javascript/sharemodal.js"></script>
-    <script src="javascript/script.js"></script>
-    <script src="javascript/chatbot.js" defer></script>
-    <script src="javascript/autocomplete.js" defer></script>
-    <script src="javascript/extract-data.js"></script>
+    <!-- <script src="javascript/copylink.js"></script> -->
+    <!-- <script src="javascript/sharemodal.js"></script> -->
+    <!-- <script src="javascript/script.js"></script> -->
+    <!-- <script src="javascript/autocomplete.js" defer></script> -->
+    <!-- <script src="javascript/extract-data.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="javascript/description.js"></script>
-    <script src="javascript/release-card.js"></script>
-    <script src="javascript/header.js"></script>
+    <!-- <script src="javascript/description.js"></script> -->
+    <!-- <script src="javascript/release-card.js"></script> -->
+    <!-- <script src="javascript/header.js"></script> -->
+    <!-- <script src="javascript/scrollUp.js"></script> -->
+    <script src="javascript/cart.js"></script>
+    <script src="javascript/img_slider.js"></script>
+    <script src="javascript/productBG.js" defer></script>
 </body>
 
 </html>

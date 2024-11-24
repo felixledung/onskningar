@@ -39,35 +39,76 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Kunde inte hitta #language-select.');
     }
 
-    // Hämta referenser till modalfönstret och stängningsknappen
-    var modal = document.getElementById("settingsModal");
-    var openSettingsButton = document.getElementById("openSettings");
-    var closeButtonSpan = document.getElementById("closeSettings");
-    var cogIcon = document.querySelector('.bx.bxs-cog');
+    // Hämta alla produkter
+    const products = document.querySelectorAll('.product');
 
-    // Lägg till eventlyssnare för att öppna modalfönstret via kugghjulsikonen
-    if (cogIcon && modal) {
-        cogIcon.onclick = function () {
-            modal.style.display = "flex";
-        };
-    } else {
-        console.error('Kunde inte hitta kugghjulsikonen eller modalfönstret.');
-    }
+    // Loopa igenom produkterna
+    products.forEach(product => {
+        // Hämta produktens ID
+        const productId = product.getAttribute('data-id');
 
-    // Lägg till eventlyssnare för att stänga modalfönstret via stängningsknappen
-    if (closeButtonSpan && modal) {
-        closeButtonSpan.onclick = function () {
-            modal.style.display = "none";
-        };
-    } else {
-        console.error('Kunde inte hitta stängningsknappen eller modalfönstret.');
-    }
+        // Hämta bilderna för produkten
+        const images = product.querySelectorAll('img');
 
-    // Lägg till eventlyssnare för att stänga modalfönstret genom att klicka utanför det
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        // Loopa igenom bilderna
+        const productImages = []; // Flyttade här för att det ska vara en gemensam array för varje produkt
+        images.forEach(image => {
+            // Hämta bildens src-attribut
+            const imageSrc = image.getAttribute('src');
+
+            // Lägg till bildens src-attribut till produktens array
+            productImages.push(imageSrc);
+        });
+
+        // Spara bilderna i en array för produkten
+        product.dataset.images = JSON.stringify(productImages);
+    });
+
+    // Funktion för att visa bilderna för en produkt (antingen som modal eller i annan container)
+    function showProductImages(productId) {
+        const product = document.querySelector(`.product[data-id="${productId}"]`);
+        if (product) {
+            const images = JSON.parse(product.dataset.images);
+
+            // Skapa en container för bilderna (kan vara en modal eller ett annat element)
+            const imageContainer = document.querySelector('.image-container');
+            imageContainer.innerHTML = ''; // Töm containern om det finns gamla bilder
+
+            // Lägg till bilder till containern
+            images.forEach(imageSrc => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.style.maxWidth = '100%';
+                img.style.marginBottom = '10px';
+                imageContainer.appendChild(img);
+            });
+
+            // Visa containern (om den är dold)
+            imageContainer.style.display = 'block';
+        } else {
+            console.error(`Produkt med ID ${productId} hittades inte.`);
         }
-    };
+    }
 
+    // Lägg till klickhanterare för att visa bilder när produkt klickas
+    products.forEach(product => {
+        product.addEventListener('click', () => {
+            // Hämta bilder för den klickade produkten
+            const images = JSON.parse(product.dataset.images);
+
+            // Visa bilderna i den befintliga container (kan vara en modal eller annat område)
+            showProductImages(product.getAttribute('data-id'));
+        });
+    });
+
+    // Lägg till en stängningsknapp eller annan logik för att stänga bildvisningen
+    const closeImageViewButton = document.querySelector('.close-image-view');
+    if (closeImageViewButton) {
+        closeImageViewButton.addEventListener('click', function () {
+            const imageContainer = document.querySelector('.image-container');
+            if (imageContainer) {
+                imageContainer.style.display = 'none'; // Döljer bildcontainern
+            }
+        });
+    }
 });

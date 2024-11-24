@@ -1,0 +1,21 @@
+[
+  {
+    "images": ["../images/products/Samsung-Galaxy-S24-FE-128GB 1.png"],
+    "wishID": "SAM-S24FE-2024-01",
+    "title": "Samsung Galaxy S24 FE (128 GB)",
+    "description": "Samsung Galaxy S24 FE 128GB erbjuder en 6.7-tums AMOLED-skärm...",
+    "price": "6 435 SEK",
+    "slidingImg": [
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 1.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 2.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 3.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 4.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 5.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 6.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 7.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 8.png",
+      "../images/products/Samsung-Galaxy-S24-FE-128GB 9.png"
+    ],
+    "imageCopy": "Samsung"
+  }
+]
