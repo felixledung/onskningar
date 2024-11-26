@@ -1,6 +1,6 @@
 [
   {
-    "images": ["../images/products/Samsung-Galaxy-S24-FE-128GB 1.png"],
+    "images": ["./images/products/Samsung-Galaxy-S24-FE-128GB 1.png"],
     "source-icon": "<a href='https://compu-mail.se/sv/p/1002810758?utm_source=pricerunner&utm_medium=cpc&utm_campaign=pricerunner' target='_blank'><i class='fa-solid fa-link'></i></a>",
     "wishID": "SAM-S24FE-2024-01",
     "title": "Samsung Galaxy S24 FE (128 GB)",
@@ -14,7 +14,7 @@
     "imageCopy": "Samsung"
   },
   {
-    "images": ["../images/products/simpl 1.png"],
+    "images": ["./images/products/simpl 1.png"],
     "source-icon": "<a href='https://www.amazon.se/Smpl-tr%C3%A5dl%C3%B6s-laddningsdyna-Qi-certifierad-kompatibel/dp/B07RTCXJPZ/ref=sr_1_1?crid=3RTFFW6YJ5TJN&dib=eyJ2IjoiMSJ9.bkeXANJv50copclqOaeo4ePRhYed4zBn83woCM2yybk.RTZjyq-D_XqeUf3b6XtPhkj6oXDZUZ0vC-nGDYttLYg&dib_tag=se&keywords=Smpl%2B-%2B10%2BW%2Btr%C3%A5dl%C3%B6s%2Bladdningsdyna&qid=1732578396&sprefix=smpl%2B-%2B10%2Bw%2Btr%C3%A5dl%C3%B6s%2Bladdningsdyna%2Caps%2C93&sr=8-1&th=1' target='_blank'><i class='fa-solid fa-link'></i></a>",
     "recommended": "Rekomenderat",
     "wishID": "TECH-WC15-2024-02 Smpl",
