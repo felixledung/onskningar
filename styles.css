@@ -387,6 +387,7 @@ footer,
     transition: background-color 0.3s ease, transform 0.3s ease;
     max-width: 700px;
     margin: 0 auto;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -575,7 +576,7 @@ footer,
     z-index: 11;
 }
 
-.contact-info{
+.contact-info {
     display: flex;
     justify-content: center;
     gap: 16px;
@@ -586,12 +587,12 @@ footer,
     transform: translate(-50%, -50%);
 }
 
-.contact-info a{
+.contact-info a {
     font-size: 18px;
     color: #fff;
 }
 
-.contact-info a:hover{
+.contact-info a:hover {
     color: #c5c5c5;
     transition: 0.3s ease;
     scale: 1.05;
@@ -786,39 +787,48 @@ footer,
 @media (max-width: 768px) {
     .footer {
         padding: 10px 20px;
+        margin-top: 15px;
     }
 }
 
 @media (max-width: 576px) {
     .footer {
         padding: 5px 10px;
+        margin-top: 15px;
     }
 }
 
 @media (max-width: 768px) {
     .footer {
         padding: 10px 20px;
-        flex-direction: column; /* Stack footer elements vertically on smaller screens */
+        flex-direction: column;
+        /* Stack footer elements vertically on smaller screens */
         text-align: center;
+        margin-top: 15px;
     }
 
     .contact-info {
-        flex-direction: column; /* Stack contact links vertically */
+        flex-direction: column;
+        /* Stack contact links vertically */
         margin-bottom: 10px;
     }
 
     .contact-info a {
-        font-size: 16px; /* Adjust font size for smaller screens */
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
     }
 }
 
 /* For very small screens */
 @media (max-width: 576px) {
     .footer {
-        padding: 5px 10px; /* Reduce padding for small screens */
+        padding: 5px 10px;
+        /* Reduce padding for small screens */
+        margin-top: 15px;
     }
 
     .contact-info a {
-        font-size: 14px; /* Even smaller text for very small screens */
+        font-size: 14px;
+        /* Even smaller text for very small screens */
     }
 }
