@@ -60,3 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch and render product data when the page loads
     fetchProductData();
 });
+
+// Förhindra markering av bilder
+document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('mousedown', function (event) {
+        event.preventDefault();
+    });
+});

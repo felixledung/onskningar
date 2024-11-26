@@ -390,7 +390,7 @@ footer,
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    cursor: pointer;
+    cursor: default;
     overflow: hidden;
 }
 
@@ -426,7 +426,7 @@ footer,
     color: white;
     width: 100%;
     padding: 5px;
-    background: linear-gradient(45deg, #ff0000, #ff00ff);
+    background: linear-gradient(45deg, #1a1a1a, #666b67);
     font-weight: bold;
     position: absolute;
     top: 37px;
@@ -454,6 +454,9 @@ footer,
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    cursor: none;
+    pointer-events: none;
     margin: 0 auto;
 }
 
@@ -475,8 +478,8 @@ footer,
 
 .product-box strong {
     display: inline-block;
-    background: #4b9e4b;
-    color: #ffffff;
+    background: #ffffff;
+    color: #222;
     font-size: 1.1rem;
     padding: 4px 8px;
     min-width: 150px;
@@ -566,53 +569,26 @@ footer,
     z-index: 11;
 }
 
-.social-icon,
-.menu {
-    position: relative;
+.contact-info{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%, -50%);
 }
 
-.social-icon__item,
-.menu__item {
-    list-style: none;
-}
-
-.social-icon__link {
-    font-size: 2rem;
+.contact-info a{
+    font-size: 18px;
     color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
 }
 
-.social-icon__link:hover {
-    transform: translateY(-10px);
-}
-
-.menu__link {
-    font-size: 1.2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-    text-decoration: none;
-    opacity: 0.75;
-    font-weight: 300;
-}
-
-.menu__link:hover {
-    opacity: 1;
-}
-
-.footer p {
-    color: #fff;
-    margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
+.contact-info a:hover{
+    color: #c5c5c5;
+    transition: 0.3s ease;
+    scale: 1.05;
 }
 
 /* Sliding Overlay */
