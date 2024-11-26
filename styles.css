@@ -157,6 +157,7 @@ footer,
     font-size: 2vw;
     margin: 0;
     cursor: pointer;
+    text-align: center;
     transition: color 0.3s ease;
 }
 
@@ -392,6 +393,11 @@ footer,
     height: 100%;
     cursor: default;
     overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    z-index: 1;
 }
 
 .product-box .product-source a {
@@ -786,5 +792,33 @@ footer,
 @media (max-width: 576px) {
     .footer {
         padding: 5px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px 20px;
+        flex-direction: column; /* Stack footer elements vertically on smaller screens */
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column; /* Stack contact links vertically */
+        margin-bottom: 10px;
+    }
+
+    .contact-info a {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* For very small screens */
+@media (max-width: 576px) {
+    .footer {
+        padding: 5px 10px; /* Reduce padding for small screens */
+    }
+
+    .contact-info a {
+        font-size: 14px; /* Even smaller text for very small screens */
     }
 }
