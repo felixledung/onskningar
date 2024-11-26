@@ -1,123 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Open and Close the Sliding Container
-    const openSlidingContainer = document.getElementById("openSlidingContainer");
-    const closeSlidingContainer = document.getElementById("closeSlidingContainer");
+document.addEventListener("DOMContentLoaded", () => {
+    const productContainer = document.querySelector(".product-container");
+    const jsonPath = "./json/products.json";  // Path to your JSON file
 
-    if (openSlidingContainer && closeSlidingContainer) {
-        openSlidingContainer.addEventListener("click", function () {
-            document.querySelector(".slidingContainer").classList.add("open");
-            document.querySelector(".slidingOverlay").classList.add("active");
-        });
-
-        closeSlidingContainer.addEventListener("click", function () {
-            document.querySelector(".slidingContainer").classList.remove("open");
-            document.querySelector(".slidingOverlay").classList.remove("active");
-        });
-    }
-
-    // Toggle the mode (Dark/Light mode)
-    const modeToggler = document.getElementById("modeToggler");
-    if (modeToggler) {
-        modeToggler.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode"); // Toggle dark mode
-            modeToggler.classList.toggle("active");
-        });
-    }
-
-    // Shopping Cart: Update quantity
-    const cartQuantity = document.querySelector(".cart-quantity");
-    let currentQuantity = 0;  // Assuming starting quantity is 0
-    cartQuantity.textContent = currentQuantity;
-
-    function updateCartQuantity() {
-        cartQuantity.textContent = currentQuantity;
-        cartQuantity.style.display = currentQuantity > 0 ? 'inline-block' : 'none';
-    }
-
-    // Example: Updating cart when adding an item
-    document.querySelector(".add-to-cart").addEventListener("click", function () {
-        currentQuantity++;
-        updateCartQuantity();
-    });
-
-    // Image Slider
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-
-    if (prevButton && nextButton) {
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll(".img-slider .slides");
-
-        function showSlide(index) {
-            if (index >= slides.length) currentSlideIndex = 0;
-            else if (index < 0) currentSlideIndex = slides.length - 1;
-            else currentSlideIndex = index;
-
-            slides.forEach((slide, i) => {
-                slide.style.display = (i === currentSlideIndex) ? 'block' : 'none';
-            });
-
-            document.querySelector(".currentImg").textContent = `${currentSlideIndex + 1} / ${slides.length}`;
+    const fetchProductData = async () => {
+        try {
+            const response = await fetch(jsonPath);
+            if (!response.ok) throw new Error("Kunde inte läsa filen.");
+            const data = await response.json();
+            renderProducts(data);
+        } catch (error) {
+            console.error("Fel vid hämtning av produkter:", error);
         }
+    };
 
-        prevButton.addEventListener("click", function () {
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;  // Update index
-            showSlide(currentSlideIndex);  // Show the previous slide
+    const renderProducts = (products) => {
+        products.forEach(product => {
+            const productBox = createProductBox(product);
+            productContainer.appendChild(productBox);
         });
+    };
 
-        nextButton.addEventListener("click", function () {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;  // Update index
-            showSlide(currentSlideIndex);  // Show the next slide
-        });
+    const createProductBox = (product) => {
+        const box = document.createElement("div");
+        box.classList.add("product-box");
 
-        showSlide(currentSlideIndex);  // Initialize slider to show the first slide
-    }
+        // Get the image path or default to empty if not present
+        const imagePath = product.images && product.images[0] ? product.images[0] : '';
 
-    // Search Functionality
-    const searchInput = document.querySelector(".search-input input");
-    const resultBox = document.querySelector(".result-box");
+        // Get the source icon, default to empty string if not present
+        const sourceIcon = product['source-icon'] ? product['source-icon'] : '';
 
-    if (searchInput) {
-        searchInput.addEventListener("input", function () {
-            const query = searchInput.value.toLowerCase();
-            const results = [];
+        // Build the product box HTML structure
+        box.innerHTML = `
+            <img src="${imagePath}" alt="${product.title}" class="product-preview">
+            <h1 class="product-title">${product.title}</h1>
+            <p class="product-description">${product.description}</p>
+            <div class="product-source">
+                ${sourceIcon ? sourceIcon : ''} <!-- Render the source icon if provided -->
+            </div>
+            <strong>Pris: <span class="price">${product.price}</span></strong>
+        `;
 
-            // Example: Static search results
-            const allResults = ["Produktens namn 1", "Produktens namn 2", "Produktens namn 3"];
+        return box;
+    };
 
-            // Filter results based on input
-            allResults.forEach(product => {
-                if (product.toLowerCase().includes(query)) {
-                    results.push(product);
-                }
-            });
 
-            // Display filtered results
-            if (results.length > 0) {
-                resultBox.style.display = "block";
-                const resultList = resultBox.querySelector("ul");
-                resultList.innerHTML = "";  // Clear previous results
-                results.forEach(result => {
-                    const listItem = document.createElement("li");
-                    const textNode = document.createTextNode(result);
-                    listItem.appendChild(textNode);
-                    resultList.appendChild(listItem);
-                });
-            } else {
-                resultBox.style.display = "none";  // Hide result box if no results
-            }
-        });
-
-        // Closing the search result box
-        searchInput.addEventListener("blur", function () {
-            setTimeout(function () {
-                resultBox.style.display = "none"; // Hide after input loses focus
-            }, 200);  // Delay to let the user click on a result
-        });
-    }
-
-    // Handling Cart
-    document.querySelector(".cart-icon a").addEventListener("click", function () {
-        window.location.href = "shopping-cart.html";  // Example cart page redirection
-    });
+    fetchProductData();
 });
