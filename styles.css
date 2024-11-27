@@ -448,8 +448,11 @@ footer,
 }
 
 .product-box:hover {
-    background: #1e1e1e;
-    transform: translateY(-4px);
+    scale: 1.005;
+    box-shadow: 0 0 10px #222;
+    background-color: #4b4b4b;
+    cursor: default;
+    transition: all 3s ease;
 }
 
 .product-box img {
@@ -461,14 +464,13 @@ footer,
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none;
     cursor: none;
-    pointer-events: none;
     margin: 0 auto;
 }
 
 .product-box img:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .product-box h1 {
@@ -831,4 +833,9 @@ footer,
         font-size: 14px;
         /* Even smaller text for very small screens */
     }
+}
+
+img{
+    margin: 15px 15px;
+    border-radius: 3.18mm;
 }
