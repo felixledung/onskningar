@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const modeToggler = document.getElementById('modeToggler'); // Använd "modeToggler"
     const body = document.body;
 
-    // Function to set the theme and update the button text
+    // Kontrollera om elementet finns innan vi fortsätter
+    if (!modeToggler) {
+        console.error('Element med ID "modeToggler" kunde inte hittas i DOM.');
+        return; // Stoppa körningen om knappen saknas
+    }
+
+    // Funktion för att sätta temat och uppdatera toggler-stilen
     function setTheme(theme) {
         body.classList.remove('dark-theme', 'light-theme');
         if (theme === 'dark') {
             body.classList.add('dark-theme');
-            themeToggleBtn.innerHTML = '<i class="bx bxs-moon"></i> Toggle Theme: Dark';
+            modeToggler.classList.add('dark'); // Lägger till en klass för visuell feedback
         } else if (theme === 'light') {
             body.classList.add('light-theme');
-            themeToggleBtn.innerHTML = '<i class="bx bxs-sun"></i> Toggle Theme: Light';
+            modeToggler.classList.remove('dark'); // Tar bort klassen
         } else {
             applySystemTheme();
             return;
@@ -18,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('theme', theme);
     }
 
-    // Function to apply system theme if no user preference is set
+    // Funktion för att tillämpa systemets tema om ingen användarinställning finns
     function applySystemTheme() {
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
         if (darkThemeMq.matches) {
@@ -28,20 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Check the user's saved theme preference
+    // Kontrollera användarens sparade temainställning
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
-        applySystemTheme(); // Apply system theme if no user preference is saved
+        applySystemTheme(); // Använd systemets tema om ingen inställning är sparad
     }
 
-    // Observe the system theme and update accordingly
+    // Övervaka systemets tema och uppdatera vid ändring
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
     darkThemeMq.addListener(applySystemTheme);
 
-    // Add event listener to the toggle button
-    themeToggleBtn.addEventListener('click', function () {
+    // Lägg till en event-lyssnare till togglern
+    modeToggler.addEventListener('click', function () {
         let currentTheme = localStorage.getItem('theme');
         if (currentTheme === 'dark') {
             setTheme('light');
@@ -50,17 +56,5 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             setTheme('dark');
         }
-    });
-
-    // Hide button on scroll down, show on scroll up
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            themeToggleBtn.style.display = 'none';
-        } else {
-            themeToggleBtn.style.display = 'block';
-        }
-        lastScrollTop = scrollTop;
     });
 });

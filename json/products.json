@@ -3,8 +3,9 @@
     "images": ["./images/products/Samsung-Galaxy-S24-FE-128GB 1.png"],
     "source-icon": "<a href='https://www.pricerunner.se/pl/1-3335514120/Mobiltelefoner/Samsung-Galaxy-S24-FE-128GB-priser' target='_blank'><i class='fa-solid fa-link'></i></a>",
     "wishID": "SAM-S24FE-2024-01",
+    "recommended": "Exempel",
     "title": "Samsung Galaxy S24 FE (128 GB)",
-    "description": "Min nuvarande mobiltelefons batteri klarar för närvarande inte en hel dag, utan att behöva ladda den. Nu när det även är mycket kallare så drar den därför mycket mer batteri. Så det kanske är dags med en ny telefon, detta då tekniken även har utvecklats. Denna mobiltelefon stödjer även trådlös laddning och stöd för SEB (trådlös betalning). Samsung Galaxy S24 FE är en ny mobil med avancerad AI, förbättrad prestanda och funktioner som Quick Share och Samsung Knox för dataskydd. Byte till S24 FE är enkelt med Samsung Smart Switch, som snabbt överför data och inställningar.",
+    "description": "Min nuvarande mobiltelefons batteri klarar för närvarande inte en hel dag, utan att behöva ladda den. Nu när det även är mycket kallare så drar den därför mycket mer batteri. Så det kanske är dags med en ny telefon, detta då tekniken även har utvecklats. Denna mobiltelefon stödjer även trådlös laddning och stöd för SEB (trådlös betalning) Vill ha kortet direkt i mobilen ifall jag ska köpa något, och har glömt kortet.  Samsung Galaxy S24 FE är en ny mobil med avancerad AI, förbättrad prestanda och funktioner som Quick Share och Samsung Knox för dataskydd. Byte till S24 FE är enkelt med Samsung Smart Switch, som snabbt överför data och inställningar.",
     "price": "Kolla blackFriday",
     "slidingImg": [
       "../images/products/Samsung-Galaxy-S24-FE-128GB 1.png",
@@ -19,7 +20,7 @@
     "recommended": "Rekomenderat",
     "wishID": "TECH-WC15-2024-02 Smpl",
     "title": "Smpl - 10 W trådlös laddningsdyna",
-    "description": "Erbjuder 10 W trådlös laddning för Qi-kompatibla enheter som iPhone och Samsung. Används för att inte behöva använda en USB (type C), för att ladda mobilen. Kompatibel med Samsung Galaxy S24 FE (128GB).",
+    "description": "Erbjuder 10 W trådlös laddning för Qi-kompatibla enheter som iPhone och Samsung. Används för att inte behöva använda en USB (typ C), för att ladda mobilen. Kompatibel med Samsung Galaxy S24 FE (128GB).",
     "price": "71 SEK",
     "slidingImg": [
       "../images/products/simpl 1.png",
